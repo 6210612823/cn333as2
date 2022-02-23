@@ -13,18 +13,16 @@ import com.example.mynotes.models.TaskList
 import com.example.mynotes.databinding.MainFragmentBinding
 import com.example.mynotes.ui.main.ListSelectionRecyclerViewAdapter
 
-class MainFragment() :
-    Fragment(), ListSelectionRecyclerViewAdapter.ListSelectionRecyclerViewClickListener {
+class MainFragment(val clickListener: MainFragmentInteractionListener) : Fragment(), ListSelectionRecyclerViewAdapter.ListSelectionRecyclerViewClickListener {
 
     private lateinit var binding: MainFragmentBinding
-    lateinit var clickListener: MainFragmentInteractionListener
 
     interface MainFragmentInteractionListener {
         fun listItemTapped(list: TaskList)
     }
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance(clickListener: MainFragmentInteractionListener) = MainFragment(clickListener)
     }
 
     private lateinit var viewModel: MainViewModel

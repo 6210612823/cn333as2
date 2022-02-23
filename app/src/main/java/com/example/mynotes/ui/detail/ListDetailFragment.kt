@@ -6,15 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.preference.PreferenceManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mynotes.ui.detail.ListItemsRecyclerViewAdapter
 import com.example.mynotes.MainActivity
-import com.example.mynotes.R
 import com.example.mynotes.databinding.ListDetailFragmentBinding
-import com.example.mynotes.models.TaskList
 import com.example.mynotes.ui.main.MainViewModel
-import com.example.mynotes.ui.main.MainViewModelFactory
 
 class ListDetailFragment : Fragment() {
     lateinit var binding: ListDetailFragmentBinding
@@ -35,6 +29,17 @@ class ListDetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
+        try {
+            (activity as MainActivity?)?.LoadEditText()
+        }
+        catch (e: ClassCastException) { null }
+        finally {
+
+        }
+
+    } /*       super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(requireActivity(),
             MainViewModelFactory(PreferenceManager.getDefaultSharedPreferences(requireActivity()))
         )
@@ -51,8 +56,7 @@ class ListDetailFragment : Fragment() {
         viewModel.onTaskAdded = {
             adapter.notifyDataSetChanged()
         }
-
-
-    }
+     }
+*/
 
 }

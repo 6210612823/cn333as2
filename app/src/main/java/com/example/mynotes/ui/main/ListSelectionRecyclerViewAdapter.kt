@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mynotes.models.TaskList
 import com.example.mynotes.databinding.ListSelectionViewHolderBinding
 
-class ListSelectionRecyclerViewAdapter(private val lists: MutableList<TaskList>,
-    val clickListener: ListSelectionRecyclerViewClickListener
-                                       ) : RecyclerView.Adapter<ListSelectionViewHolder>() {
+class ListSelectionRecyclerViewAdapter(private val lists:MutableList<TaskList>, val clickListener: ListSelectionRecyclerViewClickListener) : RecyclerView.Adapter<ListSelectionViewHolder>() {
 
     interface ListSelectionRecyclerViewClickListener {
         fun listItemClicked(list: TaskList)
