@@ -94,10 +94,12 @@ class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionLi
     private fun showListDetail(list: TaskList) {
         Log.e("Mylife", "fckme")
         if (binding.mainFragmentContainer == null) {
-                val listDetailIntent = Intent(this, ListDetailActivity::class.java)
-                listDetailIntent.putExtra(INTENT_LIST_KEY, list)
-                startActivity(listDetailIntent)
             Log.e("Awesome Tag", "Very useful message")
+            val listDetailIntent = Intent(this, ListDetailActivity::class.java)
+            Log.e("Awesome Tag", "Very useful message")
+            listDetailIntent.putExtra(INTENT_LIST_KEY, list)
+            Log.e("Awesome Tag", "Very useful message")
+            startActivity(listDetailIntent)
             //startActivityForResult(listDetailIntent, LIST_DETAIL_REQUEST_CODE)
         } else {
             title = list.name
@@ -120,7 +122,7 @@ class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionLi
     companion object {
         const val INTENT_LIST_KEY = "list"
         const val LIST_DETAIL_REQUEST_CODE = 123
-        var LIST_NAME = "test"
+        var LIST_NAME = "MyNotes"
     }
 
     override fun listItemTapped(list: TaskList) {

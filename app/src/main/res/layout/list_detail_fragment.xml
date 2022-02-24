@@ -9,10 +9,11 @@
 
     <EditText
         android:id="@+id/list_detail_edittext"
+        android:background="@null"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:ems="10"
+        android:ems="26"
         android:gravity="start|top"
         android:inputType="textMultiLine|textCapSentences"
         app:layout_constraintEnd_toEndOf="parent"
