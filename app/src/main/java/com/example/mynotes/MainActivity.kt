@@ -92,18 +92,13 @@ class MainActivity : AppCompatActivity(), MainFragment.MainFragmentInteractionLi
     }*/
 
     private fun showListDetail(list: TaskList) {
-        Log.e("Mylife", "fckme")
         if (binding.mainFragmentContainer == null) {
-            Log.e("Awesome Tag", "Very useful message")
             val listDetailIntent = Intent(this, ListDetailActivity::class.java)
-            Log.e("Awesome Tag", "Very useful message")
             listDetailIntent.putExtra(INTENT_LIST_KEY, list)
-            Log.e("Awesome Tag", "Very useful message")
             startActivity(listDetailIntent)
             //startActivityForResult(listDetailIntent, LIST_DETAIL_REQUEST_CODE)
         } else {
             title = list.name
-            Log.e("Fuck Tag", "Very useless message")
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
                 replace(R.id.list_detail_fragment_container, ListDetailFragment.newInstance())
